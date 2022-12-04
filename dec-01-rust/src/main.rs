@@ -11,7 +11,7 @@ fn main() {
 
     for line in reader.lines() {
         match line.unwrap().parse::<i32>() {
-            Ok(num) => calories[index] = num + calories[index],
+            Ok(num) => calories[index] += num,
             Err(_) => {
                 index += 1;
                 calories.push(0);
