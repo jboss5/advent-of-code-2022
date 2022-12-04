@@ -22,8 +22,7 @@ fn main() {
     }
 
     calories.sort_by(|a,b| b.cmp(a));
-    let max = calories.iter().max().expect("Internal error");
     let top3sum = calories[0] + calories[1] + calories[2];
-    println!("highest calorie count: {}", max);
+    println!("highest calorie count: {}", calories[0]);
     println!("top 3 sum: {}", top3sum);
 }
