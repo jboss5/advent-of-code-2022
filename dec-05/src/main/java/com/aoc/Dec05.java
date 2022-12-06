@@ -13,7 +13,7 @@ public class Dec05 {
     public static void main(String[] args) {
         File file = new File("input.txt");
 
-        AOCUtils.timeTask(() -> {
+        long duration = AOCUtils.timeTask(() -> {
             CraneConsumer craneConsumer = new CraneConsumer();
             try { AOCUtils.readFileByLine(file, craneConsumer); }
             catch(Exception e) { throw new RuntimeException(e); }
@@ -21,6 +21,8 @@ public class Dec05 {
             System.out.printf("Top crates: %s\n", craneConsumer.part1());
             System.out.printf("Top crates p2: %s", craneConsumer.part2());
         });
+
+        AOCUtils.printTimeBlock(duration);
     }
 }
 
