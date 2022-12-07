@@ -50,10 +50,14 @@ class SignalConsumer implements Consumer<String> {
     }
 
     private boolean hasUniquechars(String str) {
+        return (str.chars().distinct().count() == str.length());
+
+        /* Old way below, found above -- need to keep a mental note on .distinct() for streams
         return (str.chars()
                 .boxed()
                 .collect(Collectors.toSet())
                 .size() == str.length());
+         */
     }
 
     private int findCharAfterUnique(int size) {
