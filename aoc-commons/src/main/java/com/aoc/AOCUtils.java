@@ -34,11 +34,11 @@ public class AOCUtils {
      * @param consumer Consumer to send bytes
      * @throws IOException Error processing file
      */
-    public static void readFileByByte(File file, Consumer<Integer> consumer) throws IOException {
+    public static void readFileByByte(File file, Consumer<Byte> consumer) throws IOException {
         try(BufferedReader reader = new BufferedReader(new FileReader(file))) {
             int b;
             while((b = reader.read()) >= 0) {
-                consumer.accept(b);
+                consumer.accept((byte)b);
             }
         }
     }
