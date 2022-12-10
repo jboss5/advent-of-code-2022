@@ -3,3 +3,9 @@
 target/
 .idea/
 *.iml
+*.properties
+gradle*
+settings.*
+build.gradle*
+build/
+.gradle/
