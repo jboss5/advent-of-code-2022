@@ -95,7 +95,7 @@ class SandSimulator {
         char[][] grid = cloneMaster();
         buildGrid(grid);
 
-        // resize by adding 200 elements to left and right of original grid
+        // resize by adding 'size' elements to left and right of original grid
         // hacky way to simulate infinite sides
         char[][] bigGrid = new char[grid.length+2][grid[0].length+(size*2)];
         for(char[] chars : bigGrid) {
