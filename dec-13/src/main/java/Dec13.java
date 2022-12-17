@@ -56,21 +56,18 @@ class SignalConsumer implements Consumer<String> {
     }
 
     public int part2() {
-        data.add(Arrays.asList(2.0));
-        data.add(Arrays.asList(6.0));
+        List<Double> firstDivider = Arrays.asList(2.0);
+        List<Double> secondDivider = Arrays.asList(6.0);
+        data.add(firstDivider);
+        data.add(secondDivider);
         Collections.sort(data, new ListComparator());
 
         int index = 1;
         for(int i = 0; i < data.size(); i++) {
             Object obj = data.get(i);
 
-            if(obj instanceof List) {
-                if(!((List)obj).isEmpty()) {
-                    Object obj2 = ((List) obj).get(0);
-                    if (obj2 instanceof Double && ((Double) obj2 == 2.0 || (Double) obj2 == 6.0)) {
-                        index *= (i+1);
-                    }
-                }
+            if(obj == firstDivider || obj == secondDivider) {
+                index *= (i+1);
             }
         }
 
