@@ -19,7 +19,7 @@ class Range implements Comparable<Range> {
 
     @Override
     public int hashCode() {
-        return start.hashCode() + end.hashCode() * 13;
+        return toString().hashCode();
     }
 
     @Override
